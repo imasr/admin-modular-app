@@ -19,17 +19,19 @@ import { LayoutModule } from 'app/layout/layout.module';
 import { SampleModule } from 'app/main/sample/sample.module';
 
 const appRoutes: Routes = [
-    {
-        path      : '**',
-        redirectTo: 'sample'
-    }
+    { path: 'auth/login', loadChildren: './authentication/login/login.module#LoginModule', data: { title: 'Login' } },
+    { path: 'auth/register', loadChildren: './authentication/register/register.module#RegisterModule', data: { title: 'Registration' } },
+    { path: 'auth/reset-password', loadChildren: './authentication/reset-password/reset-password.module#ResetPasswordModule', data: { title: 'Reset Password' } },
+    { path: 'auth/forgot-password', loadChildren: './authentication/forgot-password/forgot-password.module#ForgotPasswordModule', data: { title: 'Forgot Password' } },
+    { path: '**', redirectTo: 'sample' }
+
 ];
 
 @NgModule({
     declarations: [
         AppComponent
     ],
-    imports     : [
+    imports: [
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
@@ -55,10 +57,9 @@ const appRoutes: Routes = [
         LayoutModule,
         SampleModule
     ],
-    bootstrap   : [
+    bootstrap: [
         AppComponent
     ]
 })
-export class AppModule
-{
+export class AppModule {
 }
