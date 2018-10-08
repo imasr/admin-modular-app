@@ -16,14 +16,15 @@ import { fuseConfig } from 'app/fuse-config';
 
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
-import { SampleModule } from 'app/main/sample/sample.module';
+import { DashboardModule } from 'app/main/dashboard/dashboard.module';
 
 const appRoutes: Routes = [
     { path: 'auth/login', loadChildren: './authentication/login/login.module#LoginModule', data: { title: 'Login' } },
     { path: 'auth/register', loadChildren: './authentication/register/register.module#RegisterModule', data: { title: 'Registration' } },
     { path: 'auth/reset-password', loadChildren: './authentication/reset-password/reset-password.module#ResetPasswordModule', data: { title: 'Reset Password' } },
     { path: 'auth/forgot-password', loadChildren: './authentication/forgot-password/forgot-password.module#ForgotPasswordModule', data: { title: 'Forgot Password' } },
-    { path: '**', redirectTo: 'sample' }
+    { path: 'dashboard', loadChildren: './main/dashboard/dashboard.module#DashboardModule', data: { title: 'Dashboard' } },
+    { path: '**', redirectTo: 'auth/login' }
 
 ];
 
@@ -55,7 +56,7 @@ const appRoutes: Routes = [
 
         // App modules
         LayoutModule,
-        SampleModule
+        DashboardModule
     ],
     bootstrap: [
         AppComponent
