@@ -16,7 +16,7 @@ import { VerticalLayout1Component } from 'app/layout/vertical/layout-1/layout-1.
     declarations: [
         VerticalLayout1Component
     ],
-    imports     : [
+    imports: [
         RouterModule,
 
         FuseSharedModule,
@@ -28,10 +28,9 @@ import { VerticalLayout1Component } from 'app/layout/vertical/layout-1/layout-1.
         QuickPanelModule,
         ToolbarModule
     ],
-    exports     : [
+    exports: [
         VerticalLayout1Component
     ]
 })
-export class VerticalLayout1Module
-{
+export class VerticalLayout1Module {
 }

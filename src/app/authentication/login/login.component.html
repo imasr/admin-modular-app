@@ -50,13 +50,15 @@
                 <span class="text">OR</span>
             </div>
 
-            <button mat-raised-button class="google">
+            <!-- <button mat-raised-button class="google">
                 Log in with Google
             </button>
 
             <button mat-raised-button class="facebook">
                 Log in with Facebook
-            </button>
+            </button> -->
+            <social-auth-login [isGoogle]="isGoogle" [isFacebook]="isFacebook" (googleSignIn)="googleSignIn($event)"
+                (fbSignIn)="fbSignIn($event)"></social-auth-login>
 
             <div class="register" fxLayout="column" fxLayoutAlign="center center">
                 <span class="text">Don't have an account?</span>

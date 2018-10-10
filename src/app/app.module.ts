@@ -16,9 +16,12 @@ import { fuseConfig } from 'app/fuse-config';
 
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
-import { DashboardModule } from 'app/main/dashboard/dashboard.module';
+import { AuthServiceConfig, AuthService } from 'angularx-social-login';
+import { provideConfig } from './authentication/social-auth-login/social-auth-config';
+import { UrlSanitizerPipe } from './pipes/url-sanitizer.pipe';
 
 const appRoutes: Routes = [
+    { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
     { path: 'auth/login', loadChildren: './authentication/login/login.module#LoginModule', data: { title: 'Login' } },
     { path: 'auth/register', loadChildren: './authentication/register/register.module#RegisterModule', data: { title: 'Registration' } },
     { path: 'auth/reset-password', loadChildren: './authentication/reset-password/reset-password.module#ResetPasswordModule', data: { title: 'Reset Password' } },
@@ -30,7 +33,7 @@ const appRoutes: Routes = [
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
     ],
     imports: [
         BrowserModule,
@@ -55,8 +58,14 @@ const appRoutes: Routes = [
         FuseThemeOptionsModule,
 
         // App modules
-        LayoutModule,
-        DashboardModule
+        LayoutModule
+    ],
+    providers: [
+        AuthService,
+        {
+            provide: AuthServiceConfig,
+            useFactory: provideConfig
+        }
     ],
     bootstrap: [
         AppComponent

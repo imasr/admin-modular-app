@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FuseConfigService } from '@fuse/services/config.service';
 import { fuseAnimations } from '@fuse/animations';
 import { Router } from '@angular/router';
+import { GlobalService } from '../../services/global-service';
 
 @Component({
     selector: 'login',
@@ -14,6 +15,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
+    isGoogle: boolean = true;
+    isFacebook: boolean = true;
+
 
     /**
      * Constructor
@@ -24,7 +28,8 @@ export class LoginComponent implements OnInit {
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
-        private _router: Router
+        private _router: Router,
+        private globalService: GlobalService
     ) {
         // Configure the layout
         this._fuseConfigService.config = {
@@ -58,8 +63,21 @@ export class LoginComponent implements OnInit {
             password: ['', Validators.required]
         });
     }
+
     onLogin() {
         console.log(this.loginForm.valid, this.loginForm.value);
+        this._router.navigate(['dashboard'])
+    }
+
+    fbSignIn(e) {
+        if (Object.keys(e).length) {
+            this.globalService.setItem = JSON.stringify(e)
+            this._router.navigate(['dashboard'])
+        }
+    }
+
+    googleSignIn(e) {
+        this.globalService.setItem = JSON.stringify(e)
         this._router.navigate(['dashboard'])
     }
 }
