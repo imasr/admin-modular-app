@@ -47,7 +47,6 @@ export class FuseProgressBarComponent implements OnInit, OnDestroy {
         this._fuseProgressBarService.bufferValue
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((bufferValue) => {
-                console.log(bufferValue)
                 this.bufferValue = bufferValue;
             });
 
@@ -55,8 +54,6 @@ export class FuseProgressBarComponent implements OnInit, OnDestroy {
         this._fuseProgressBarService.mode
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((mode) => {
-
-                console.log(mode)
                 this.mode = mode;
             });
 
@@ -64,7 +61,6 @@ export class FuseProgressBarComponent implements OnInit, OnDestroy {
         this._fuseProgressBarService.value
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((value) => {
-                console.log(value)
                 this.value = value;
             });
 

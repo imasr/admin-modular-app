@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SocialAuthLoginComponent } from './social-auth-login.component';
+import { GoogleLoginComponent } from './google-login.component';
 import { MatButtonModule } from '@angular/material';
 
 @NgModule({
@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material';
     CommonModule,
     MatButtonModule
   ],
-  declarations: [SocialAuthLoginComponent],
-  exports: [SocialAuthLoginComponent],
+  declarations: [GoogleLoginComponent],
+  exports: [GoogleLoginComponent]
 })
-export class SocialAuthLoginModule { }
+export class GoogleLoginModule { }

@@ -8,6 +8,9 @@ import { LoginComponent } from './login.component';
 import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider } from "angularx-social-login";
 import { SocialAuthLoginModule } from '../social-auth-login/social-auth-login.module';
+import { GoogleLoginModule } from '../google-login/google-login.module';
+import { FacebookLoginModule } from '../facebook-login/facebook-login.module';
+import { LinkedInLoginModule } from '../linked-in-login/linked-in-login.module';
 
 
 let config = new AuthServiceConfig([
@@ -50,7 +53,10 @@ const routes = [
         MatInputModule,
 
         FuseSharedModule,
-        SocialAuthLoginModule
+        SocialAuthLoginModule,
+        GoogleLoginModule,
+        FacebookLoginModule,
+        LinkedInLoginModule
     ],
     providers: [
         {

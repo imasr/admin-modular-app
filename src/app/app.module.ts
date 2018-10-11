@@ -18,7 +18,6 @@ import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 import { AuthServiceConfig, AuthService } from 'angularx-social-login';
 import { provideConfig } from './authentication/social-auth-login/social-auth-config';
-import { UrlSanitizerPipe } from './pipes/url-sanitizer.pipe';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'auth/login', pathMatch: 'full' },

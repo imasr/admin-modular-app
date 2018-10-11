@@ -121,7 +121,8 @@ login {
                 button {
 
                     &.google,
-                    &.facebook {
+                    &.facebook,
+                    &.linkedin {
                         width: 192px;
                         text-transform: none;
                         color: #FFFFFF;
@@ -139,6 +140,9 @@ login {
 
                     &.facebook {
                         background-color: rgb(63, 92, 154);
+                    }
+                     &.linkedin {
+                        background-color: #4875B4;
                     }
                 }
             }

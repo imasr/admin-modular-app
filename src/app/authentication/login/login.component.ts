@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     isGoogle: boolean = true;
     isFacebook: boolean = true;
+    isLinkedin: boolean = true;
 
 
     /**
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
         private _fuseConfigService: FuseConfigService,
         private _formBuilder: FormBuilder,
         private _router: Router,
-        private globalService: GlobalService
+        private globalService: GlobalService,
     ) {
         // Configure the layout
         this._fuseConfigService.config = {
@@ -77,6 +78,12 @@ export class LoginComponent implements OnInit {
     }
 
     googleSignIn(e) {
+
+        this.globalService.setItem = JSON.stringify(e)
+        this._router.navigate(['dashboard'])
+    }
+
+    linkedinSignIn(e) {
         this.globalService.setItem = JSON.stringify(e)
         this._router.navigate(['dashboard'])
     }

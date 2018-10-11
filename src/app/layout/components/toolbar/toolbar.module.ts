@@ -6,7 +6,6 @@ import { FuseSearchBarModule, FuseShortcutsModule } from '@fuse/components';
 import { FuseSharedModule } from '@fuse/shared.module';
 
 import { ToolbarComponent } from 'app/layout/components/toolbar/toolbar.component';
-import { UrlSanitizerPipe } from '../../../pipes/url-sanitizer.pipe';
 
 @NgModule({
     declarations: [

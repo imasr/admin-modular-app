@@ -57,8 +57,11 @@
             <button mat-raised-button class="facebook">
                 Log in with Facebook
             </button> -->
-            <social-auth-login [isGoogle]="isGoogle" [isFacebook]="isFacebook" (googleSignIn)="googleSignIn($event)"
-                (fbSignIn)="fbSignIn($event)"></social-auth-login>
+            <!-- <social-auth-login [isGoogle]="isGoogle" [isFacebook]="isFacebook" (googleSignIn)="googleSignIn($event)"
+                (fbSignIn)="fbSignIn($event)"></social-auth-login> -->
+            <linked-in-login [isLinkedin]="isLinkedin" (linkedinSignIn)="linkedinSignIn($event)"></linked-in-login>
+            <!-- <google-login [isGoogle]="isGoogle" (googleSignIn)="googleSignIn($event)"></google-login>
+            <facebook-login [isFacebook]="isFacebook" (fbSignIn)="fbSignIn($event)"></facebook-login> -->
 
             <div class="register" fxLayout="column" fxLayoutAlign="center center">
                 <span class="text">Don't have an account?</span>

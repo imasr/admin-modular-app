@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FuseSharedModule } from '@fuse/shared.module';
 
 import { DashboardComponent } from './dashboard.component';
+import { LinkedInLoginModule } from 'app/authentication/linked-in-login/linked-in-login.module';
 
 const routes = [
     {
@@ -22,7 +23,8 @@ const routes = [
 
         TranslateModule,
 
-        FuseSharedModule
+        FuseSharedModule,
+        LinkedInLoginModule
     ],
     exports: [
         DashboardComponent
